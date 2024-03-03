@@ -3,4 +3,4 @@ Program to demonstrate the differences between Riemann Sum integral approximatio
 # Built With
 * C++
 # Closer Look
-![Screenshot 2024-03-02 231650](https://github.com/RobertxPearce/Integral-Approximation-Visualization/assets/102342225/385c1ae2-3003-4eaf-a329-95570f9002dd)
+![integral-approximation-visualization](https://github.com/RobertxPearce/Integral-Approximation-Visualization/assets/102342225/14180572-30dc-416e-8d29-c46f5f40446f)
