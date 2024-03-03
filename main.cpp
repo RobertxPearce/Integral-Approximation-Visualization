@@ -1,4 +1,11 @@
+//-----------------------------------------------
+// Riemann Sum Approximation Visualization
+// Robert Pearce
+// 03/02/2024
+//-----------------------------------------------
+
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 
 using namespace std;
@@ -11,7 +18,6 @@ double function(double x);
 double leftRule(double a, double b, int n);
 double rightRule(double a, double b, int n);
 double midpointRule(double a, double b, int n);
-// double simpsonsRule(double a, double b, int n);
 double trapezoidalRule(double a, double b, int n);
 
 //-------------------------
@@ -32,7 +38,6 @@ int main(int argc, char const *argv[])
     double leftApprox = 0;
     double rightApprox = 0;
     double midpointApprox = 0;
-    double simpsonsApprox = 0;
     double trapezoidalApprox = 0;
 
     //-------------------------
@@ -52,16 +57,21 @@ int main(int argc, char const *argv[])
 
     //-------------------------
     //   Calculation Section
-    //------------------------- 
+    //-------------------------
+
     leftApprox = leftRule(a, b, n);
+    midpointApprox = midpointRule(a, b, n);
+    rightApprox = rightRule(a, b, n);
     trapezoidalApprox = trapezoidalRule(a, b, n);
 
     //-------------------------
     //     Output Section
     //------------------------- 
-
-    cout << "Left Endpoint Rule: " << leftApprox << endl;
-    cout << "Trapazoidal Rule: " << trapezoidalApprox << endl;
+    cout << left;
+    cout << setw(23) << "Left Endpoint Rule: " << leftApprox << endl;
+    cout << setw(23) << "Midpoint Rule: " << midpointApprox << endl;
+    cout << setw(23) << "Right Endpoint Rule: " << rightApprox << endl;
+    cout << setw(23) << "Trapazoidal Rule: " << trapezoidalApprox << endl;
     cout << dashedLine;
 
     return 0;
@@ -74,11 +84,18 @@ int main(int argc, char const *argv[])
 /// @brief Function to represent f(x)=x^2.
 /// @param x Value of x for function.
 /// @return Return x^2.
-double function(double x) {
+double function(double x)
+{
     return x * x;
 }
 
-double leftRule(double a, double b, int n) {
+/// @brief Function to approximate integrals using the left endpoint rule.
+/// @param a Lower limit of integral.
+/// @param b Upper limit of integral.
+/// @param n Number of intervals.
+/// @return Returns the approximation using the left endpoint rule.
+double leftRule(double a, double b, int n)
+{
     double x = 0;
     double deltaX = (b - a) / n;
     double sum = 0;
@@ -90,31 +107,50 @@ double leftRule(double a, double b, int n) {
     return sum * deltaX;
 }
 
-/*
-double rightRule(double a, double b, int n) {
+/// @brief Function to approximate integrals using the midpoint rule.
+/// @param a Lower limit of integral.
+/// @param b Upper limit of integral.
+/// @param n Number of intervals.
+/// @return Returns the approximation using the midpoint rule.
+double midpointRule(double a, double b, int n)
+{
     double x = 0;
     double deltaX = (b - a) / n;
-    double sum;
+    double sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        x = a + (i + 0.5) * deltaX;
+        sum += function(x);
+    }
+    return sum * deltaX;
 }
 
-double midpointRule(double a, double b, int n) {
+/// @brief Function to approximate integrals using the right endpoint rule.
+/// @param a Lower limit of integral.
+/// @param b Upper limit of integral.
+/// @param n Number of intervals.
+/// @return Returns the approximation using the right endpoint rule.
+double rightRule(double a, double b, int n)
+{
     double x = 0;
     double deltaX = (b - a) / n;
-    double sum;
+    double sum = 0;
+
+    for (int i = 1; i < n; i++) {
+        x = a + deltaX * i;
+        sum += function(x);
+    }
+    sum += function(b);
+    return sum * deltaX;
 }
-
-
-double simpsonsRule(double a, double b, int n) {
-
-}
-*/
 
 /// @brief Function to approximate integrals using the trapezoidal rule.
 /// @param a Lower limit of integral.
 /// @param b Upper limit of integral.
 /// @param n Number of intervals.
 /// @return Returns the approximation using the trapezoidal rule.
-double trapezoidalRule(double a, double b, int n) {
+double trapezoidalRule(double a, double b, int n)
+{
     double x = 0;
     double deltaX = (b - a) / n;
     double sum = (function(a) + function(b));
