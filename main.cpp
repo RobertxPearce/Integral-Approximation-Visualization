@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
     //  Variables Declarations
     //-------------------------
 
-    string dashedLine = "------------------------------------------------\n";
+    string dashedLine = "---------------------------------------------------\n";
     double a = 0;
     double b = 0;
     int n = 0;
@@ -45,7 +45,7 @@ int main(int argc, char const *argv[])
     //------------------------- 
 
     cout << dashedLine;
-    cout << "Integral Approximation Visualization f(x)=x^2" << endl;
+    cout << "Riemann Sum Approximation Visualization f(x)=x^2" << endl;
     cout << dashedLine;
     cout << "Enter the lower limit of integration: ";
     cin >> a;
