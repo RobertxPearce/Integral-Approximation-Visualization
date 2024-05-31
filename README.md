@@ -4,4 +4,4 @@ https://en.wikipedia.org/wiki/Riemann_sum
 # Built With
 * C++
 # Closer Look
-![integral-approximation-visualization](https://github.com/RobertxPearce/Integral-Approximation-Visualization/assets/102342225/14180572-30dc-416e-8d29-c46f5f40446f)
+![integral-approximation-visualization-gif](https://github.com/RobertxPearce/Integral-Approximation-Visualization/assets/102342225/2f1402e2-0955-4814-b601-69f31998f008)
