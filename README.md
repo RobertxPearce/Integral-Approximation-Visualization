@@ -4,6 +4,16 @@ Program to demonstrate the differences between Riemann Sum integral approximatio
 # Built With
 * C++
 
+## Files
+### main.cpp
+- Program to demonstrate the differences between Riemann Sum integral approximation methods; left endpoint, midpoint, right endpoint, and trapezoidal approximation.
+  - `function(double x)`: Defines the function f(x)=x^2 to be integrated.
+  - `leftRule(double a, double b, int n)`: Computes the area under the curve using the left endpoint Riemann sum.
+  - `rightRule(double a, double b, int n)`: Computes the area using the right endpoint Riemann sum.
+  - `midpointRule(double a, double b, int n)`: Computes the area using the midpoint Riemann sum.
+  - `trapezoidalRule(double a, double b, int n)`: Computes the area using the trapezoidal approximation.
+  - `main()`: Entry point that handles user input for integration bounds and number of intervals and output.
+
 # Reference
 * https://en.wikipedia.org/wiki/Riemann_sum
 * https://openstax.org/books/calculus-volume-1/pages/5-1-approximating-areas
