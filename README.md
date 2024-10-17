@@ -14,9 +14,9 @@ Program to demonstrate the differences between Riemann Sum integral approximatio
   - `trapezoidalRule(double a, double b, int n)`: Computes the area using the trapezoidal approximation.
   - `main()`: Entry point that handles user input for integration bounds and number of intervals and output.
 
+# Closer Look
+![integral-approximation-visualization-gif](https://github.com/RobertxPearce/Integral-Approximation-Visualization/assets/102342225/2f1402e2-0955-4814-b601-69f31998f008)
+
 # Reference
 * https://en.wikipedia.org/wiki/Riemann_sum
 * https://openstax.org/books/calculus-volume-1/pages/5-1-approximating-areas
-
-# Closer Look
-![integral-approximation-visualization-gif](https://github.com/RobertxPearce/Integral-Approximation-Visualization/assets/102342225/2f1402e2-0955-4814-b601-69f31998f008)
